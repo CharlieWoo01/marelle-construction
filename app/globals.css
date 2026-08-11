@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/*
+ * Marelle Construction Services — design tokens
+ *
+ * Raw values live on :root as plain CSS custom properties. The @theme block
+ * maps those raw values into Tailwind's theme namespaces (--color-*, --font-*,
+ * --radius-*, --shadow-*, --spacing-*, --container-*, --breakpoint-*) so they
+ * are usable as Tailwind utilities (e.g. bg-brand-red, rounded-card, max-w-content).
+ */
+
+:root {
+  /* Brand colours */
+  --brand-red: #d21f1f;
+  --brand-red-dark: #a51717;
+  --brand-red-light: #f4d3d3;
+  --brand-black: #121212;
+  --brand-charcoal: #1f1f1f;
+  --brand-white: #ffffff;
+
+  /* Neutral greys (content backgrounds, borders, muted text) */
+  --neutral-50: #fafafa;
+  --neutral-100: #f2f2f2;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+
+  /* Semantic aliases used throughout the app */
+  --background: var(--brand-white);
+  --foreground: var(--brand-black);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-red-light: var(--brand-red-light);
+  --color-brand-black: var(--brand-black);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-white: var(--brand-white);
+
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+
+  /* Shadows */
+  --shadow-card: 0 4px 12px rgb(0 0 0 / 0.08);
+  --shadow-elevated: 0 12px 32px rgb(0 0 0 / 0.16);
+
+  /* Shared section/page spacing (used as e.g. py-section, px-gutter) */
+  --spacing-gutter: 1.5rem;
+  --spacing-section: 6rem;
+
+  /* Container widths (used as e.g. max-w-content) */
+  --container-content: 80rem;
+  --container-narrow: 48rem;
+  --container-wide: 90rem;
+
+  /* Extra small breakpoint below Tailwind's default `sm` (40rem) */
+  --breakpoint-xs: 30rem;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Visible focus states for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-brand-red);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
