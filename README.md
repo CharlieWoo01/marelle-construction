@@ -285,7 +285,7 @@ Potential future additions include:
 
 **Phone:** 07766 023 224
 **Email:** [marellecs@outlook.com](mailto:marellecs@outlook.com)
-**Area:** Tameside & surrounding areas
+**Area:** [Area] & surrounding areas
 
 ---
 

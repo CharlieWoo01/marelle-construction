@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Marelle Construction Services",
   },
   description:
-    "Marelle Construction Services provides building, renovation, maintenance and property improvement services across Tameside and the surrounding areas.",
+    "Marelle Construction Services provides building, renovation, maintenance and property improvement services across [Area] and the surrounding areas.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

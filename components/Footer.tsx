@@ -15,7 +15,7 @@ export default function Footer() {
           </p>
           <p className="mt-3 max-w-xs text-sm text-neutral-400">
             Building, renovation, maintenance and property improvement
-            services across Tameside and the surrounding areas.
+            services across [Area] and the surrounding areas.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
           </a>
           <span className="flex items-center gap-2">
             <MapPin size={16} aria-hidden="true" />
-            Tameside &amp; surrounding areas
+            [Service Area] &amp; surrounding areas
           </span>
         </div>
       </Container>

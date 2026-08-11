@@ -32,7 +32,7 @@ export default function Home() {
             Building, renovation and property improvement you can trust.
           </h1>
           <p className="max-w-xl text-base text-neutral-300">
-            Serving Tameside and the surrounding areas with quality
+            Serving [Area] and the surrounding areas with quality
             workmanship on extensions, renovations, maintenance and more.
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
