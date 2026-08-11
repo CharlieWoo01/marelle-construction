@@ -1,5 +1,13 @@
 import Container from "@/components/Container";
 
+// Required for static export (GitHub Pages build): every dynamic route must
+// have its params known at build time, and "output: export" needs at least
+// one. There's no project data yet — once data/projects.ts exists, return
+// its slugs here instead of this placeholder.
+export function generateStaticParams() {
+  return [{ slug: "placeholder" }];
+}
+
 export default async function ProjectPage({
   params,
 }: PageProps<"/projects/[slug]">) {
