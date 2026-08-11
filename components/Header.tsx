@@ -61,22 +61,20 @@ export default function Header() {
       </Container>
 
       {menuOpen && (
-        <nav
-          id="mobile-nav"
-          aria-label="Primary"
-          className="border-t border-neutral-200 bg-brand-white md:hidden"
-        >
+        <div id="mobile-nav" className="border-t border-neutral-200 bg-brand-white md:hidden">
           <Container className="flex flex-col gap-1 py-4">
-            {primaryNav.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-md px-2 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-brand-red"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <nav aria-label="Primary" className="flex flex-col gap-1">
+              {primaryNav.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-md px-2 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-brand-red"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
             <Button
               href={quoteLink.href}
               variant="primary"
@@ -86,7 +84,7 @@ export default function Header() {
               {quoteLink.label}
             </Button>
           </Container>
-        </nav>
+        </div>
       )}
     </header>
   );
