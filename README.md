@@ -56,7 +56,6 @@ marelle-construction/
 │   ├── Header.tsx
 │   ├── Footer.tsx
 │   ├── Hero.tsx
-│   ├── TrustBar.tsx
 │   ├── SectionHeading.tsx
 │   ├── ServiceCard.tsx
 │   ├── ReviewCard.tsx

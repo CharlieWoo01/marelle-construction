@@ -1,7 +1,6 @@
 import { CheckCircle2, Clock, HandCoins, HeartHandshake, Mail, Phone } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Hero from "@/components/Hero";
-import TrustBar from "@/components/TrustBar";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import ReviewCard from "@/components/ReviewCard";
@@ -52,8 +51,6 @@ export default function Home() {
         primaryCta={{ label: "Get a Quote", href: "/quote" }}
         secondaryCta={{ label: "Our Services", href: "/services" }}
       />
-
-      <TrustBar />
 
       {/* Our Services */}
       <section className="bg-brand-white">
