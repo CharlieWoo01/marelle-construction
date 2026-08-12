@@ -34,6 +34,8 @@ The website consists of the following primary pages:
 ```text
 marelle-construction/
 ├── app/
+│   ├── layout.tsx
+│   ├── globals.css
 │   ├── page.tsx
 │   ├── services/
 │   │   └── page.tsx
@@ -47,25 +49,29 @@ marelle-construction/
 │   │   └── page.tsx
 │   ├── quote/
 │   │   └── page.tsx
-│   └── api/
+│   └── api/               # not yet implemented
 │       └── quote/
 │           └── route.ts
 ├── components/
 │   ├── Header.tsx
 │   ├── Footer.tsx
 │   ├── Hero.tsx
-│   ├── ServiceCard.tsx
-│   ├── ProjectCard.tsx
-│   ├── ReviewCard.tsx
 │   ├── TrustBar.tsx
-│   └── QuoteForm.tsx
+│   ├── SectionHeading.tsx
+│   ├── ServiceCard.tsx
+│   ├── ReviewCard.tsx
+│   ├── Container.tsx
+│   ├── Button.tsx
+│   ├── ProjectCard.tsx     # not yet implemented
+│   └── QuoteForm.tsx       # not yet implemented
 ├── data/
+│   ├── navigation.ts
 │   ├── services.ts
-│   ├── projects.ts
-│   └── reviews.ts
+│   ├── reviews.ts
+│   └── projects.ts        # not yet implemented
 └── public/
     ├── images/
-    └── logo/
+    └── logo/               # not yet implemented
 ```
 
 ## Getting Started
@@ -257,7 +263,7 @@ Where appropriate:
 
 ## Deployment
 
-Production is hosted using **Vercel**.
+Production is intended to be hosted using **Vercel**.
 
 Deployments should be connected to the Git repository so that:
 
@@ -265,6 +271,23 @@ Deployments should be connected to the Git repository so that:
 * The main branch deploys to production
 * Environment variables are managed through Vercel
 * HTTPS is enabled automatically
+
+### Current stopgap: GitHub Pages
+
+Until the site needs a server (e.g. the `/api/quote` route), pushes to `main`
+also deploy a static export to GitHub Pages via
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml):
+
+```text
+https://charliewoo01.github.io/marelle-construction/
+```
+
+This build sets `GITHUB_PAGES=true`, which switches `next.config.ts` to
+`output: "export"` with the repo's base path — `pnpm dev`/`pnpm build`
+locally, and any future Vercel deploy, are unaffected and stay a normal
+Next.js server build. Once server-side functionality (like the quote form's
+API route) is added, this repo can no longer also ship as a static export,
+and hosting should move fully to Vercel at that point.
 
 ## Future Improvements
 

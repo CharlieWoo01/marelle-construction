@@ -8,7 +8,7 @@ const trustPoints = [
     icon: MapPin,
     title: "Proudly Local",
     description:
-      "Based in [Service Area], proud to serve customers across the surrounding areas.",
+      "Based in [Area], proud to serve customers across the surrounding areas.",
   },
   {
     icon: ShieldCheck,

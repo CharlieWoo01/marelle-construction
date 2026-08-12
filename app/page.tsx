@@ -48,7 +48,7 @@ export default function Home() {
       <Hero
         eyebrow="Marelle Construction Services"
         headingLines={["Building with Pride.", "Delivering with Care."]}
-        description="From extensions and renovations to ongoing property maintenance, we deliver quality workmanship across [Service Area] and the surrounding areas, trusted by homeowners from first quote to final finish."
+        description="From extensions and renovations to ongoing property maintenance, we deliver quality workmanship across [Area] and the surrounding areas, trusted by homeowners from first quote to final finish."
         primaryCta={{ label: "Get a Quote", href: "/quote" }}
         secondaryCta={{ label: "Our Services", href: "/services" }}
       />
