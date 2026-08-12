@@ -1,14 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HardHat, Menu, X } from "lucide-react";
-import { primaryNav, quoteLink } from "@/data/navigation";
+import { primaryNav, quoteLink, type NavLink } from "@/data/navigation";
 import Container from "./Container";
 import Button from "./Button";
 
+function isActivePath(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Let keyboard users dismiss the mobile menu with Escape.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setMenuOpen(false);
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
+  const renderLink = (link: NavLink, className: string, activeClassName: string) => {
+    const active = isActivePath(pathname, link.href);
+    return (
+      <Link
+        key={link.href}
+        href={link.href}
+        aria-current={active ? "page" : undefined}
+        className={`${className} ${active ? activeClassName : ""}`}
+        onClick={() => setMenuOpen(false)}
+      >
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
     <header className="border-b border-neutral-200 bg-brand-white">
@@ -33,15 +67,13 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-          {primaryNav.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-neutral-700 transition-colors hover:text-brand-red"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {primaryNav.map((link) =>
+            renderLink(
+              link,
+              "border-b-2 border-transparent py-1 text-sm font-medium text-neutral-700 transition-colors hover:text-brand-red",
+              "border-brand-red text-brand-red",
+            ),
+          )}
         </nav>
 
         <Button href={quoteLink.href} variant="primary" className="hidden md:inline-flex">
@@ -64,16 +96,13 @@ export default function Header() {
         <div id="mobile-nav" className="border-t border-neutral-200 bg-brand-white md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             <nav aria-label="Primary" className="flex flex-col gap-1">
-              {primaryNav.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-md px-2 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-brand-red"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {primaryNav.map((link) =>
+                renderLink(
+                  link,
+                  "rounded-md px-2 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-brand-red",
+                  "bg-neutral-50 text-brand-red",
+                ),
+              )}
             </nav>
             <Button
               href={quoteLink.href}
