@@ -106,6 +106,19 @@ h6 {
   outline-offset: 2px;
 }
 
+/*
+ * Lighter, architectural-style section background (faint blueprint grid) —
+ * an alternative to a plain white section for content that should read as
+ * distinct without going as heavy as the black sections.
+ */
+.bg-architectural {
+  background-color: var(--color-neutral-50);
+  background-image:
+    linear-gradient(var(--color-neutral-200) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-neutral-200) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
