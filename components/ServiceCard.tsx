@@ -8,7 +8,7 @@ type ServiceCardProps = {
 
 /**
  * Image card for a service. The top region is reserved for real project
- * photography once it's available — for now it shows an icon placeholder
+ * photography once it's available. For now it shows an icon placeholder
  * so the layout is honest about its unfinished state rather than a broken
  * <Image>.
  */

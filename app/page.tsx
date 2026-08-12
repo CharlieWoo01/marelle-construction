@@ -23,7 +23,7 @@ const whyChooseUs: { icon: LucideIcon; title: string; description: string }[] = 
   {
     icon: HandCoins,
     title: "Clear, Honest Quotes",
-    description: "No hidden costs — every quote is itemised and explained up front.",
+    description: "No hidden costs: every quote is itemised and explained up front.",
   },
   {
     icon: CheckCircle2,
@@ -48,7 +48,7 @@ export default function Home() {
       <Hero
         eyebrow="Marelle Construction Services"
         headingLines={["Building with Pride.", "Delivering with Care."]}
-        description="From extensions and renovations to ongoing property maintenance, we deliver quality workmanship across [Service Area] and the surrounding areas — trusted by homeowners from first quote to final finish."
+        description="From extensions and renovations to ongoing property maintenance, we deliver quality workmanship across [Service Area] and the surrounding areas, trusted by homeowners from first quote to final finish."
         primaryCta={{ label: "Get a Quote", href: "/quote" }}
         secondaryCta={{ label: "Our Services", href: "/services" }}
       />
@@ -76,13 +76,13 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* What We Do — lighter, architectural-style background */}
+      {/* What We Do (lighter, architectural-style background) */}
       <section className="bg-architectural">
         <Container className="grid gap-10 py-section lg:grid-cols-2 lg:items-center">
           <SectionHeading
             eyebrow="What We Do"
             title="One team, start to finish"
-            description="Marelle Construction Services handles every stage of your project — from the first conversation and design through to build, finishing and aftercare — so you deal with one trusted team throughout."
+            description="Marelle Construction Services handles every stage of your project, from the first conversation and design through to build, finishing and aftercare, so you deal with one trusted team throughout."
           />
           <ul className="grid gap-3 sm:grid-cols-2">
             {capabilities.map((item) => (
@@ -122,8 +122,9 @@ export default function Home() {
         <Container className="flex flex-col items-center gap-6 py-section text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">Get in Touch</h2>
           <p className="max-w-xl text-neutral-300">
-            Ready to start your project? Get in touch for a free, no-obligation
-            quote — we&rsquo;re happy to talk through your ideas.
+            Ready to start your project? Get in touch for a free,
+            no-obligation quote. We&rsquo;re happy to talk through your
+            ideas.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
             <Button href="/quote" variant="primary">
@@ -156,7 +157,7 @@ export default function Home() {
             align="center"
           />
           <p className="mx-auto mt-2 max-w-xl text-center text-xs text-neutral-500">
-            Example testimonials shown for now — to be replaced with real,
+            Example testimonials shown for now. To be replaced with real,
             verified customer reviews.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -7,7 +7,7 @@ export type Review = {
 /**
  * Placeholder testimonials for layout purposes only. Per README's Reviews
  * section, these must not be presented as Google/Trustpilot reviews unless
- * they genuinely originate from and are verified by that platform — replace
+ * they genuinely originate from and are verified by that platform. Replace
  * with real, attributed customer reviews before launch.
  */
 export const reviews: Review[] = [
@@ -21,12 +21,12 @@ export const reviews: Review[] = [
     name: "James P.",
     location: "Hyde",
     quote:
-      "Really clear communication throughout our kitchen renovation — no surprises, finished on the date they promised.",
+      "Really clear communication throughout our kitchen renovation. No surprises, finished on the date they promised.",
   },
   {
     name: "Emma & Dan R.",
     location: "Stalybridge",
     quote:
-      "We've used them twice now for maintenance work. Reliable, tidy and fairly priced — wouldn't go anywhere else.",
+      "We've used them twice now for maintenance work. Reliable, tidy and fairly priced. Wouldn't go anywhere else.",
   },
 ];

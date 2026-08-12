@@ -46,12 +46,12 @@ export default function Header() {
 
   return (
     <header className="border-b border-neutral-200 bg-brand-white">
-      {/* This is an early work-in-progress mock-up — remove once the real design is signed off. */}
+      {/* This is an early work-in-progress mock-up. Remove once the real design is signed off. */}
       <div className="bg-brand-black text-brand-white">
         <Container className="flex items-center justify-center gap-2 py-1.5 text-center text-xs">
           <HardHat size={14} className="shrink-0 text-brand-red" aria-hidden="true" />
           <p>
-            Placeholder site — this is a work-in-progress mock-up, not the
+            Placeholder site. This is a work-in-progress mock-up, not the
             final design.
           </p>
         </Container>
@@ -76,9 +76,11 @@ export default function Header() {
           )}
         </nav>
 
-        <Button href={quoteLink.href} variant="primary" className="hidden md:inline-flex">
-          {quoteLink.label}
-        </Button>
+        <div className="hidden md:block">
+          <Button href={quoteLink.href} variant="primary">
+            {quoteLink.label}
+          </Button>
+        </div>
 
         <button
           type="button"

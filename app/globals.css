@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Marelle Construction Services — design tokens
+ * Marelle Construction Services: design tokens
  *
  * Raw values live on :root as plain CSS custom properties. The @theme block
  * maps those raw values into Tailwind's theme namespaces (--color-*, --font-*,
@@ -107,8 +107,8 @@ h6 {
 }
 
 /*
- * Lighter, architectural-style section background (faint blueprint grid) —
- * an alternative to a plain white section for content that should read as
+ * Lighter, architectural-style section background (faint blueprint grid).
+ * An alternative to a plain white section for content that should read as
  * distinct without going as heavy as the black sections.
  */
 .bg-architectural {
